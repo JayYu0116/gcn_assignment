@@ -1,11 +1,15 @@
-import unittest
 
+import unittest
 import torch
+
 from data.constants import TASK_CLASSIFY
 from modeling.core.layers import GCNLayer
 from src.data.graph import Graph
 from src.data.utils import seed_all
+
 seed_all(0)  # important! Otherwise tests won't be deterministic. They still may be stochastic though because of the randomness of the torch library.
+
+# python -m unittest tests/test_gcn_model.py
 
 class TestGCNLayer(unittest.TestCase):
     args = {
