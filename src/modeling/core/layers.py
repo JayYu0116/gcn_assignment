@@ -32,6 +32,7 @@ class GCNLayer(nn.Module):
         # 2. Multiply the output of the linear transformation by the adjacency matrix.
         # Hint: You can use torch.spmm() to do the matrix multiplication. The implementation 
         # should be about 2-3 lines of code.
+        # Hint: You can use the unit test (tests/test_gcn_layer.py) to check your implementation.
         
         # YOUR CODE HERE
         return output
