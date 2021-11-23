@@ -1,8 +1,5 @@
 import logging
 import time
-import numpy as np
-import random
-
 import torch
 import torch.nn.functional as F
 import torch.optim as optim

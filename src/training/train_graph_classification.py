@@ -5,15 +5,14 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from modeling.core.gcn import GCN
+from src.modeling.core.gcn import GCN
 from src.modeling.tasks.graph_classification import GraphClassifier
-
 from src.data.utils import seed_all
 from src.data.utils import accuracy
 from src.training.args import get_training_args
 
 logging.basicConfig(level=logging.INFO)
-# Training settings
+
 
 
 def main():

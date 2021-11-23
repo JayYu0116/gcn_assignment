@@ -1,25 +1,21 @@
 import logging
-import math
 import time
-import numpy as np
-import random
 from itertools import chain
-
+import torch.nn as nn
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from modeling.tasks.node_classification import NodeClassifier
 
+from src.modeling.tasks.node_classification import NodeClassifier
 from src.data.utils import seed_all
 from src.data.graph import Graph
 from src.data.utils import accuracy, batchify_edges
 from src.modeling.tasks.link_prediction import LinkPrediction
 from src.training.args import get_training_args
 
-import torch.nn as nn
 
 logging.basicConfig(level=logging.INFO)
-# Training settings
+
 
 
 def main():
