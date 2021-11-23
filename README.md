@@ -1,4 +1,4 @@
-# gnn_assignment
+# GCN Assignment for 11741 Fall 2021
 
 ## Getting started
 
@@ -7,7 +7,7 @@
 - Please use Python 3.6 or above.
 
 
-## Outline of the assignment
+## Outline
 
 This goal of this assignment is to implement a basic GCN model for node classification, link prediction, and graph classification. Most of the code related to training, data loading, and evaluation is provided. You need to implement the parts marked as # TODO. Each TODO needs a few lines of code to complete (2-3 lines in most cases).
 
@@ -40,12 +40,17 @@ This goal of this assignment is to implement a basic GCN model for node classifi
 ```sh
 bash scripts/run_node_classification.sh [GRAPH_NAME]
 ```
-E.g.,
+
+Where:
+- GRAPH_NAME is the name of the graph to use (e.g., `cora`, `citeseer`).
+
+E.g., to run node classification on `citeseer` with topological features, run:
+
 ```sh
 bash scripts/run_node_classification.sh citeseer_plus_topo
 ```
 
-- The link prediction is similar.
+- The usage link prediction is similar.
 
 ### Graph classification
 ```sh
