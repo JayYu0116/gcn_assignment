@@ -28,11 +28,11 @@
 
 ### Part 4: Link prediction
 
-- Use the GCN model implemented in part 2 to predict links in the graph ([partial implementation](src/modeling/tasks/link_prediction.py)).
+- Use the GCN model implemented in part 2 to predict links in the graph ([partial implementation](src/modeling/tasks/link_prediction.py)). This [notebook](notebooks/LinkPredictionTrainingData.ipynb) can be used to explore the training data.
 
 ### Part 5: Graph classification
 
-- We will use the GCN model implemented in part 2 to classify graphs (i.e., predict a label for each graph, partial implementation [here](src/modeling/tasks/graph_classification.py)).
+- We will use the GCN model implemented in part 2 to classify graphs (i.e., predict a label for each graph, partial implementation [here](src/modeling/tasks/graph_classification.py),  [notebook](notebooks/GraphClassificationStatistics.ipynb)).
 
 
 ## Scripts
