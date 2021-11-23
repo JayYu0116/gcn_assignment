@@ -16,7 +16,7 @@
 GRAPH="$1"
 NUM_CLASSES="$2"
 POOLING_OP="$3"
-NUM_EPOCHS="1000"
+NUM_EPOCHS="$4"
 python src/training/train_graph_classification.py \
   --task graph_classification \
   --graphs_path ${GRAPH} \
