@@ -2,17 +2,17 @@
 
 ## Getting started
 
-- Unzip the data from `data.zip`.
-- Install the required packages listed in `requirements.txt`.
+- Unzip the data from `data.zip.`
+- Install the required packages listed in `requirements.txt.`
 - Please use Python 3.6 or above.
 
 
 ## Outline
 
-This goal of this assignment is to implement a basic GCN model for node classification, link prediction, and graph classification. Most of the code related to training, data loading, and evaluation is provided. You need to implement the parts marked with a #TODO. Each TODO needs a few lines of code to complete (2-3 lines in most cases).
+The goal of this assignment is to implement a basic GCN model for node classification, link prediction, and graph classification. Most of the code related to training, data loading, and evaluation is provided. You need to implement the parts marked with a #TODO. Each TODO needs a few lines of code to complete (2-3 lines in most cases). 
 
 ### Part 1: Graph exploration
-- The notebook notebooks/GraphExploration.ipynb contains the code for the first part of this assignment. The goal of this part is to introduce you to `graph.py`, the class that represents a graph and some of its methods.
+- The notebook notebooks/GraphExploration.ipynb contains the code for the first part of this assignment. This part aims to introduce you to `graph.py,` the class that represents a graph and some of its methods.
 
 
 ### Part 2: Implementing a GCN
@@ -42,7 +42,7 @@ bash scripts/run_node_classification.sh [GRAPH_NAME]
 ```
 
 Where:
-- GRAPH_NAME is the name of the graph to use (e.g., `cora`, `citeseer`).
+- GRAPH_NAME is the name of the graph to use (e.g., `cora,` `citeseer`).
 
 E.g., to run node classification on `citeseer` with topological features, run:
 
@@ -66,11 +66,11 @@ Where:
 More details can be found in scripts/run_graph_classification.sh.
 
 
-E.g., to run graph classification on mutag (2 classes) with max pooling and 200 epochs:
+E.g., to run graph classification on mutag (2 classes) with max-pooling and 200 epochs:
 
 ```sh
 bash scripts/run_graph_classification.sh data/graph_classification/graph_mutag_with_node_num.pt 2 max 200
 ```
 
 ## Attributions
-- Parts of the dataloader code are based on [this repo](https://github.com/tkipf/gcn).
+- Parts of the data loader code are based on [this repo](https://github.com/tkipf/gcn).
