@@ -12,7 +12,7 @@ from src.data.graph import Graph
 from src.data.utils import accuracy, batchify_edges
 from src.modeling.tasks.link_prediction import LinkPrediction
 from src.training.args import get_training_args
-
+from src.data.constants import *
 
 logging.basicConfig(level=logging.INFO)
 
@@ -26,8 +26,6 @@ def main():
 
 
 class Trainer(object):
-    TASK_CLASSIFY = "classify"
-    TASK_LINK_PRED = "link_pred"
 
     def __init__(self, args) -> None:
         super().__init__()
@@ -42,7 +40,8 @@ class Trainer(object):
         )
 
     def init_model(self):
-
+        # Ιnitializes a node classification model and a link prediction model
+        # The node classification model is jointly trained with the link prediction model.
         self.model = NodeClassifier(
             input_dim=self.graph.features.shape[1],
             hidden_dim=self.args.hidden,
@@ -50,7 +49,7 @@ class Trainer(object):
             dropout=self.args.dropout,
         ).to(self.device)
         print(self.model)
-        if self.args.task == self.TASK_LINK_PRED:
+        if self.args.task ==  TASK_LINK_PRED:
             self.link_prediction_model = LinkPrediction(hidden_dim=self.args.hidden,).to(
                 self.device
             )
@@ -71,7 +70,9 @@ class Trainer(object):
         self.test()
 
     def epoch(self, epoch):
+        # runs a single epoch
         t = time.time()
+        
 
         # run one epoch of GCN to refine node_embeddings
         for batch_idx, (batch_nodes, batch_edges, batch_labels) in enumerate(
@@ -122,6 +123,7 @@ class Trainer(object):
         self.eval("test", self.graph.test_edges, self.graph.test_edge_labels)
 
     def eval(self, split, edges, labels):
+        # Evaluates the model on the given split
         avg_accuracy, avg_loss = 0.0, 0.0
         n_items = 0.0
         self.link_prediction_model.eval()

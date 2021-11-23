@@ -10,9 +10,9 @@ from src.modeling.tasks.graph_classification import GraphClassifier
 from src.data.utils import seed_all
 from src.data.utils import accuracy
 from src.training.args import get_training_args
+from src.data.constants import *
 
 logging.basicConfig(level=logging.INFO)
-
 
 
 def main():
@@ -23,10 +23,6 @@ def main():
 
 
 class GraphClassificationTrainer(object):
-    TASK_CLASSIFY = "classify"
-    TASK_LINK_PRED = "link_pred"
-    TASK_GRAPH_CLASSIFICATION = "graph_classification"
-
     def __init__(self, args) -> None:
         super().__init__()
         self.args = args
@@ -51,7 +47,7 @@ class GraphClassificationTrainer(object):
         logging.info(f"Input dim {self.input_dim}")
 
     def init_model(self):
-
+        # Initialize a GCN and a graph classification model
         self.model = GCN(
             self.input_dim,
             hidden_dim=self.args.hidden,
@@ -59,9 +55,10 @@ class GraphClassificationTrainer(object):
             dropout=self.args.dropout,
         ).to(self.device)
         print(self.model)
-        if self.args.task == self.TASK_GRAPH_CLASSIFICATION:
+        if self.args.task == TASK_GRAPH_CLASSIFICATION:
             self.graph_classification_model = GraphClassifier(
-                hidden_dim=self.args.hidden // 2, num_classes=self.args.num_graph_classes,
+                hidden_dim=self.args.hidden // 2,
+                num_classes=self.args.num_graph_classes,
                 pooling_op=self.args.pooling_op,
             ).to(self.device)
             self.loss_func = nn.CrossEntropyLoss()
@@ -81,6 +78,7 @@ class GraphClassificationTrainer(object):
         self.eval("test")
 
     def epoch(self, epoch):
+        # Runs one epoch of training and evaluation
         t = time.time()
 
         epoch_acc = 0.0
@@ -92,7 +90,9 @@ class GraphClassificationTrainer(object):
             self.graph_classification_model.train()
             self.model.train()
 
-            graph_class_loss, graph_class_acc, graph_pred_label = self.run_graph_classification(graph)
+            graph_class_loss, graph_class_acc, graph_pred_label = self.run_graph_classification(
+                graph
+            )
 
             epoch_loss += graph_class_loss.item()
 
@@ -117,7 +117,7 @@ class GraphClassificationTrainer(object):
         self.eval("test")
 
     def run_graph_classification(self, graph):
-
+        # Runs one graph through the graph classification model
         x = self.model(graph["node_features"], graph["adj"])  # (num_nodes, hidden_dim)
         logits = self.graph_classification_model(x).unsqueeze(0)
         loss = self.loss_func(logits, graph["graph_label"])
@@ -126,6 +126,7 @@ class GraphClassificationTrainer(object):
         return loss, acc, pred_label
 
     def eval(self, split: str):
+        # Evaluates the model on the specified split
         avg_accuracy, avg_loss = 0.0, 0.0
 
         self.graph_classification_model.eval()
@@ -156,9 +157,6 @@ class GraphClassificationTrainer(object):
         print(f"{split}_precision: {precision.mean().item() * 100:.2f}")
         print(f"{split}_recall: {recall.mean().item() * 100:.2f}")
         print(f"{split}_f1: {f1.mean().item() * 100:.2f}")
-
-
-        
 
         n_items = len(self.graphs[split])
         avg_accuracy /= n_items
