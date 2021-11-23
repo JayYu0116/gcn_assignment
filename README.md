@@ -9,7 +9,7 @@
 
 ## Outline
 
-This goal of this assignment is to implement a basic GCN model for node classification, link prediction, and graph classification. Most of the code related to training, data loading, and evaluation is provided. You need to implement the parts marked as # TODO. Each TODO needs a few lines of code to complete (2-3 lines in most cases).
+This goal of this assignment is to implement a basic GCN model for node classification, link prediction, and graph classification. Most of the code related to training, data loading, and evaluation is provided. You need to implement the parts marked with a #TODO. Each TODO needs a few lines of code to complete (2-3 lines in most cases).
 
 ### Part 1: Graph exploration
 - The notebook notebooks/GraphExploration.ipynb contains the code for the first part of this assignment. The goal of this part is to introduce you to `graph.py`, the class that represents a graph and some of its methods.
