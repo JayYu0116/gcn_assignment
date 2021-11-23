@@ -13,26 +13,26 @@
 
 
 ### Part 1: Graph exploration
-- The notebook notebooks/GraphExploration.ipynb contains the code for the first part of this assignment. This part aims to introduce you to `graph.py,` the class that represents a graph and some of its methods.
+- The notebook [notebooks/GraphExploration.ipynb](notebooks/GraphExploration.ipynb) contains the code for the first part of this assignment. This part aims to introduce you to [graph.py](src/data/graph.py), the class that represents a graph and some of its methods.
 
 
 ### Part 2: Implementing a GCN
 
 - This has two sub-parts:
-1. Implementing a GCN layer
-2. Using the GCN layer to implement a GCN model
+1. Implementing a GCN layer by completing [this code](src/modeling/core/gcn.py).
+2. Using the GCN layer to complete the implementation of GCN [here](src/modeling/core/layers.py). 
 
 ### Part 3: Node classification
 
-- Use the GCN model implemented in part 2 to classify nodes in the graph.
+- Use the GCN model implemented in part 2 to classify nodes in the graph (by completing [this](src/modeling/tasks/node_classification.py)).
 
 ### Part 4: Link prediction
 
-- Use the GCN model implemented in part 2 to predict links in the graph.
+- Use the GCN model implemented in part 2 to predict links in the graph ([partial implementation](src/modeling/tasks/link_prediction.py)).
 
 ### Part 5: Graph classification
 
-- We will use the GCN model implemented in part 2 to classify graphs (i.e., predict a label for each graph).
+- We will use the GCN model implemented in part 2 to classify graphs (i.e., predict a label for each graph, partial implementation [here](src/modeling/tasks/graph_classification.py)).
 
 
 ## Scripts
