@@ -1,4 +1,4 @@
-# GCN Assignment for 11741 Fall 2021
+# GCN Assignment for 11441/11641/11741
 
 ## Getting started
 
