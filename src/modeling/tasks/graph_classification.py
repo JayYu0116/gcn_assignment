@@ -15,6 +15,7 @@ class GraphClassifier(nn.Module):
         1. Pools the node representations using the pooling operation specified
         2. Applies a classifier to the pooled representation
         """
+        # TODO: Implement the forward pass for the graph classifier
         return classifier_logits
     
     def pool(self, x: torch.Tensor, operation: str = "last") -> torch.Tensor:
