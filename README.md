@@ -73,5 +73,19 @@ E.g., to run graph classification on mutag (2 classes) with max-pooling and 200 
 bash scripts/run_graph_classification.sh data/graph_classification/graph_mutag_with_node_num.pt 2 max 200
 ```
 
+## FAQ
+
+### Getting feedback
+
+- You can create a **private** fork of this repository on GitHub and add the TAs as collaborators (usernames: madaan, yaushian). This might help you in asking questions without having to copy-paste your code on piazza (you can just reference Github code/copy permalink). You can use [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) or just copy-paste the code into a new repository.
+
+### Posting your solutions online
+
+- As with all the other assignments, please do not share your solutions publicly.
+
+
+
 ## Attributions
 - Parts of the data loader code are based on [this repo](https://github.com/tkipf/gcn).
+
+
