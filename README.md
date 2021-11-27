@@ -4,7 +4,9 @@
 
 - Unzip the data from `data.zip.`
 - Install the required packages listed in `requirements.txt.`
+- Set PYTHONPATH to `.:../:src` (you can do this by running `export PYTHONPATH=".:../:src"` on the shell, for example).
 - Please use Python 3.6 or above.
+
 
 
 ## Outline
