@@ -4,7 +4,7 @@
 
 - Unzip the data from `data.zip.`
 - Install the required packages listed in `requirements.txt.`
-- Set PYTHONPATH to `.:../:src` (you can do this by running `export PYTHONPATH=".:../:src"` on the shell, for example).
+- Set [PYTHONPATH](https://bic-berkeley.github.io/psych-214-fall-2016/using_pythonpath.html) to `.:../:src` (you can do this by running `export PYTHONPATH=".:../:src"` on the shell, for example).
 - Please use Python 3.6 or above.
 
 
