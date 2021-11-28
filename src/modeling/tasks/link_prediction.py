@@ -23,6 +23,7 @@ class LinkPrediction(nn.Module):
         # node_features_after_gcn: [num_nodes, hidden_dim]
         # edges: [2, num_edges]
         # the function should return classifier logits for each edge
+        # Note that the output should not be probabilities, rather one logit for each class.
         # TODO: Implement the forward pass of the link prediction module
         return classifier_logits
 
