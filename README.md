@@ -1,3 +1,4 @@
+#### This is an identical copy of [original design of this homework](https://github.com/madaan/gcn_assignment)
 # GCN Assignment for 11441/11641/11741
 
 ## Getting started
